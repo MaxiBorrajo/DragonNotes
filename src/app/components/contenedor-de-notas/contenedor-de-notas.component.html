@@ -1,0 +1,22 @@
+<!-- comienzo de side bar -->
+<nav class="navbar">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a [routerLink]="['/notas']" class="nav-link nav-notes" routerLinkActive="active">
+                <div class="icon"><fa-icon [icon]="faNoteSticky"></fa-icon></div>
+                <div class="title">Notas</div>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a [routerLink]="['/basura']" class="nav-link nav-trash" routerLinkActive="active">
+                <div class="icon"><fa-icon [icon]="faTrash"></fa-icon></div>
+                <div class="title">Basura</div>
+            </a>
+        </li>
+    </ul>
+</nav>
+<!-- fin de sidebar -->
+<!-- comienzo del main, aca van las notas y demas cosas -->
+<div class="main">
+    <router-outlet></router-outlet>
+</div>

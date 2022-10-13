@@ -1,0 +1,22 @@
+<!-- comienzo barra de navegacion -->
+<div class="contenedor-de-botones">
+    <div class="primeros-botones">
+        <button class="btn btn-menu" title="Menu"><fa-icon [icon]="faBars"></fa-icon></button>
+        <div class="logoName">
+            <button class="btn btn-logo" title="Logo" #logo><fa-icon [icon]="faDragon"></fa-icon></button>
+            <label for="logo" class="labelLogo">DragonNotes</label>
+        </div>
+    </div>
+    <!-- comienzo barra de busqueda -->
+    <form method="get" role="search" class="form-barra-busqueda">
+        <div class="btn btn-buscar" title="Buscar"><fa-icon [icon]="faMagnifyingGlass"></fa-icon></div>
+        <input class="barra-busqueda" type="text" placeholder="Buscar..">
+    </form>
+    <!-- fin de barra de busqueda -->
+    <div class="segundos-botones">
+        <button class="btn btn-recargar" title="Recargar pagina"><fa-icon [icon]="faArrowRotateRight"></fa-icon></button>
+        <button class="btn btn-config" title="Configuración"><fa-icon [icon]="faGear"></fa-icon></button>
+        <button class="btn btn-login" title="Login" (click)="openLoginModal()"><fa-icon [icon]="faPersonWalkingArrowRight"></fa-icon></button>
+    </div>
+</div>
+<!-- fin de barra de navegacion -->
