@@ -27,13 +27,7 @@ export class BarraDeBusquedaComponent implements OnInit {
   }
 
   //metodos
-
-  openLoginModal(){
-    const dialogRef = this.dialog.open(LoginComponent, {});
-    dialogRef.afterClosed().subscribe(
-      res=>{
-        console.log(res);
-      }
-    );
+  openDialog(){
+    this.dialog.open(LoginComponent);
   }
 }

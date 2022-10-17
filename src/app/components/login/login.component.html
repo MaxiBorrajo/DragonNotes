@@ -1,6 +1,26 @@
-<div class="login" mat-dialog-content>
+<div class="login">
+    <fa-icon [icon]="faDragon" class="logo"></fa-icon>
     <form class="loginForm" mat-dialog-actions [formGroup]="loginForm">
-        
-        <button mat-button (click)="closeLoginModal()">Close</button>
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre de Usuario</mat-label>
+            <input matInput placeholder="" formControlName="user" type="text">
+            <mat-icon matSuffix><fa-icon [icon]="faUser"></fa-icon></mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="" formControlName="email" type="email">
+            <mat-icon matSuffix><fa-icon [icon]="faEnvelope"></fa-icon></mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Contraseña</mat-label>
+            <div>
+                <input matInput placeholder="" formControlName="password" [type]="visiblePassword?'text':'password'">
+                <button mat-icon-button matSuffix 
+                (click)="viewPassword()" style="position:absolute; top:0; left:175px; padding: 0;">
+                    <fa-icon [icon]="iconPass"></fa-icon>
+                </button>
+            </div>
+        </mat-form-field>
+        <button mat-stroked-button (click)="closeDialog()">Login</button>
     </form>
 </div>
