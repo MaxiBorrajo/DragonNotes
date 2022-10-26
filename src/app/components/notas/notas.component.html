@@ -1,1 +1,8 @@
-<div class="notas">hl</div>
+<div class="notas">
+    <div class="agregar-nota">
+        <app-agregar-nota (newNotaEvent)="agregarNota($event)"></app-agregar-nota>
+    </div>
+    <div class="contenedor-notas">
+        <app-nota *ngFor="let nota of notas; let i=index" [nota]="nota" [i]="i"></app-nota>
+    </div>
+</div>

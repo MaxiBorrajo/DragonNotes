@@ -14,7 +14,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field'; 
-import {MatInputModule} from '@angular/material/input'
+import {MatInputModule} from '@angular/material/input';
+import { NotaComponent } from './components/nota/nota.component'
+import {HttpClientModule} from '@angular/common/http';
+import { AgregarNotaComponent } from './components/agregar-nota/agregar-nota.component'
+import {MatExpansionModule} from '@angular/material/expansion';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { EditarNotaComponent } from './components/editar-nota/editar-nota.component';
+import { NotaBasuraComponent } from './components/nota-basura/nota-basura.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +33,11 @@ import {MatInputModule} from '@angular/material/input'
     ContenedorDeNotasComponent,
     NotasComponent,
     BasuraComponent,
-    LoginComponent
+    LoginComponent,
+    NotaComponent,
+    AgregarNotaComponent,
+    EditarNotaComponent,
+    NotaBasuraComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +49,13 @@ import {MatInputModule} from '@angular/material/input'
     MatDialogModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule,
+    MatExpansionModule,
+    MatSnackBarModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage()),
+    provideFirestore(() => getFirestore())
   ],
   entryComponents: [LoginComponent],
   providers: [],

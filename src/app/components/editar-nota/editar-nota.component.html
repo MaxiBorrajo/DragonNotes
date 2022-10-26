@@ -1,0 +1,14 @@
+<div class="contenedor">
+    <form class="formulario-nota" [formGroup]="nuevaNota">
+        <div class="cabecera">
+            <input class="cuerpoTitulo" placeholder="Titulo" formControlName="tituloNota" type="text">
+            <button class="btn btn-close" (click)="closeDialog()" title="Cerrar"><fa-icon [icon]="faXMark"></fa-icon></button>
+        </div>
+        <div class="cuerpo">
+            <textarea class="cuerpoNota" placeholder="Escribe tus ideas ..." formControlName="cuerpoNota" type="text"></textarea>
+        </div>
+        <div class="guardarNota">
+            <button type="submit" class="btn-guardar" (click)="EditarNota()" title="Editar">Editar <fa-icon [icon]="faPen"></fa-icon></button>
+        </div>
+    </form>
+</div>

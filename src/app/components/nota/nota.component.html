@@ -1,0 +1,15 @@
+<div class="estructura-nota">
+    <div class="titulo">
+        <h2>{{nota.titulo}}</h2>
+        <div class="botones">
+            <button class="btn btn-editar" (click)="openDialog()" title="Editar"><fa-icon [icon]="faPenToSquare"></fa-icon></button>
+            <button class="btn btn-borrar" (click)="moverABasura()" title="Mover a basura"><fa-icon [icon]="faTrashCan"></fa-icon></button>
+        </div>
+    </div>
+    <div class="cuerpo">
+        <p>{{nota.cuerpo}}</p>
+    </div>
+    <div class="fechaCreacion">
+        <h5>Fecha de creación: {{nota.fechaCreacion | date:'dd/MM/yy'}}</h5>
+    </div>
+</div>

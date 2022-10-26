@@ -1,1 +1,5 @@
-<p>basura works!</p>
+<div class="notas">
+    <div class="contenedor-notas">
+        <app-nota-basura *ngFor="let nota of notas; let i=index" [nota]="nota" [i]="i"></app-nota-basura>
+    </div>
+</div>

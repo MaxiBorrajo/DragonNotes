@@ -1,6 +1,22 @@
 .notas{
     width: 100%;
     height: 100vh;
-    background: #111213;
+    background: var(--primary-color);
     margin: 0;
+    display: grid;
+    overflow: auto;
+}
+.agregar-nota, .contenedor-notas{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0 0 0;
+}
+
+.contenedor-notas{
+    height: 100%;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: start;
+    padding: 0 0 50px 0;
 }

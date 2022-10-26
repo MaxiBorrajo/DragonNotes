@@ -2,7 +2,6 @@ section{
     position:fixed;
     width: 100%;
     height: 100vh;
-    overflow: hidden;
 }
 header{
     width:100%;
@@ -12,5 +11,5 @@ header{
 .linea_separador{
     width:100%;
     height: 1px;
-    background: rgba(133, 130, 130, 1);
+    background: var(--third-color);
 }
