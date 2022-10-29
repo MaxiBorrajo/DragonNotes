@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   //variables
-  title = 'Notes';
+  title = 'DragonNotes';
 
   //constructores
   constructor() { }

@@ -11,9 +11,12 @@ export class NotasManagementService {
   private id:number = 0;
   private _refresh$ = new Subject<void>();
   private notasBasura:Nota[] = [];
-
+  private notasPrincipal:Nota[] = [];
 
   constructor(private http:HttpClient, private firestore:Firestore) {
+    this.obtenerNotas().subscribe(resp => {
+      this.notasPrincipal = Object.values(resp);
+    })
     this.obtenerNotasBasura().subscribe(resp => {
       this.notasBasura = Object.values(resp);
     })
@@ -65,6 +68,9 @@ export class NotasManagementService {
       resp => console.log(resp),
       err => console.log(err)
     );
+    this.obtenerNotasBasura().subscribe(resp => {
+      this.notasBasura = Object.values(resp);
+    });
   }
 
   editarNota(id:number, nota:Nota){
@@ -84,5 +90,25 @@ export class NotasManagementService {
 
   obtenerId(){
     return this.id;
+  }
+
+  recuperarNota(id:number, nota:Nota){
+    this.notasPrincipal.push(nota);
+    this.guardarNotas(this.notasPrincipal);
+    this.obtenerNotas().subscribe(resp => {
+      this.notasPrincipal = Object.values(resp);
+    })
+    this.borrarNotaBDBasura(id);
+  }
+
+  borrarNotaBDBasura(id:number){
+    const url = 'https://dragon-notes-basura-default-rtdb.firebaseio.com/datos/' + id + '.json'
+    this.http.delete(url).pipe(
+      tap(() => {
+        this._refresh$.next();
+      })
+    ).subscribe(
+      resp => console.log(resp),
+      err => console.log(err));
   }
 }

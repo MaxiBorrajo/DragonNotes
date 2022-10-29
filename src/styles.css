@@ -1,21 +1,23 @@
+/*variables globales*/
 :root{
     --primary-color: #111213;
     --secondary-color: #fff;
     --third-color: rgba(133, 130, 130, 1);
 }
-
+/*Estilos predeterminados*/
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+/*Estilos de estiquetas*/
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+/*Estilos de dialog*/
 .mat-dialog-container{
     background: none;
 }
-
+/*Estilos para botones*/
 .btn{
     display:flex;
     justify-content: center;

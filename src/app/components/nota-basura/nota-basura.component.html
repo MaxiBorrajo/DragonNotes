@@ -1,6 +1,11 @@
 <div class="estructura-nota">
     <div class="titulo">
         <h2>{{nota.titulo}}</h2>
+        <button class="btn btn-opciones" [matMenuTriggerFor]="opciones"><fa-icon [icon]="faEllipsisVertical"></fa-icon></button>
+        <mat-menu #opciones="matMenu">
+            <button class="opcion" mat-menu-item (click)="openDialogDelete()"><fa-icon [icon]="faSkull"></fa-icon> Borrar</button>
+            <button class="opcion" mat-menu-item (click)="recoverNote()"><fa-icon [icon]="faReply"></fa-icon> Recuperar</button>
+        </mat-menu>
     </div>
     <div class="cuerpo">
         <p>{{nota.cuerpo}}</p>

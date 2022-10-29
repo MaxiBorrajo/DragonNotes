@@ -48,5 +48,6 @@ export class AgregarNotaComponent implements OnInit {
     if(!(nota.getTitulo() == "" && nota.getCuerpo() == "")){
       this.newNotaEvent.emit(nota);
     }
+    this.nuevaNota.reset({tituloNota: "", cuerpoNota: ""});
   }
 }

@@ -16,3 +16,9 @@
 .titulo h2{
     width:100%;
 }
+
+.opcion{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Nota } from 'src/app/interfaces y clases/nota';
 import { NotasManagementService } from 'src/app/services/notas-management.service';
 
@@ -11,6 +12,7 @@ export class BasuraComponent implements OnInit {
 
   //variables
   notas:Nota[]=[];
+  refreshSubscription: Subscription;
 
   constructor(private notasManagement:NotasManagementService) { }
 
@@ -18,6 +20,16 @@ export class BasuraComponent implements OnInit {
     this.notasManagement.obtenerNotasBasura().subscribe(resp => {
       this.notas = Object.values(resp);
     })
+
+    this.refreshSubscription = this.notasManagement.refresh$.subscribe(() => {
+      this.notasManagement.obtenerNotasBasura().subscribe(resp => {
+        this.notas = Object.values(resp);
+      })
+    })
+  }
+
+  ngOnDestroy(): void{
+    this.refreshSubscription.unsubscribe();
   }
 
 }

@@ -1,10 +1,10 @@
+//Importaciones
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { BasuraComponent } from './components/basura/basura.component';
-import { ContenedorDeNotasComponent } from './components/contenedor-de-notas/contenedor-de-notas.component';
 import { NotasComponent } from './components/notas/notas.component';
 
+// Rutas
 const routes: Routes = [
   {path:'', redirectTo:'notas', pathMatch:'full'},
   {path:'notas', component:NotasComponent},
